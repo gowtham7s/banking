@@ -116,7 +116,6 @@ class _InitialDetailScreenState extends State<InitialDetailScreen> {
                             child: Text(emailErrorText, style: TextStyle(color: HexColor("da291c"), fontWeight: FontWeight.normal, fontSize: 12),),
                           ) : const SizedBox(),
 
-
                           ///Space
                           const SizedBox(height: 10 ,),
 
