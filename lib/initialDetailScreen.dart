@@ -2,6 +2,8 @@ import 'package:banking/customWidgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
 import 'helpers/helpers.dart';
 import 'dart:ui';
+import 'package:get/get.dart';
+import 'initialDetailsScreen2.dart';
 
 class InitialDetailScreen extends StatefulWidget {
   const InitialDetailScreen({Key? key}) : super(key: key);
@@ -27,14 +29,14 @@ class _InitialDetailScreenState extends State<InitialDetailScreen> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        // appBar: AppBar(
-        //   leading: IconButton(
-        //     icon: Icon(Icons.arrow_back),
-        //     onPressed: () => Navigator.of(context).pop(false),
-        //   ),
-        //   title: Text('Find Devices'),
-        //   actions: <Widget>[],
-        // ),
+        appBar: AppBar(
+          // leading: IconButton(
+          //   icon: Icon(Icons.arrow_back),
+          //   onPressed: () => Navigator.of(context).pop(false),
+          // ),
+          title: Text('Find Devices'),
+          // actions: <Widget>[],
+        ),
         body: SingleChildScrollView(
           child: SafeArea(
               child: Container(
@@ -90,7 +92,7 @@ class _InitialDetailScreenState extends State<InitialDetailScreen> {
                           const SizedBox(height: 18,),
 
                           /// Email address
-                          CustomTextField(title: "Email address", placeholder: "Enter email address",
+                          CustomTextField(title: "Email address", placeholder:"${Get.arguments}", // "Enter email address",
                             onSubmit: (value){ print(value);  },
                             onChanged: (value) {
                               print("Changing is $value");
@@ -175,7 +177,10 @@ class _InitialDetailScreenState extends State<InitialDetailScreen> {
                               width:width - 64.0,
                               child: ElevatedButton(
                                 child: Text("Continue", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16),),
-                                onPressed: () => print("it's pressed"),
+                                onPressed: () async {
+                                  var data = await Get.toNamed("/second/1234"); //"/second?channel=mobile&device=i O S"
+                                  print("the back data is $data");
+                                  },
                                 style: ElevatedButton.styleFrom(
                                   primary: HexColor("003087"),
                                   onPrimary: Colors.white,

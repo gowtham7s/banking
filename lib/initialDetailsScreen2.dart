@@ -1,5 +1,6 @@
 import 'package:banking/customWidgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'helpers/helpers.dart';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
@@ -341,7 +342,11 @@ class _InitialDetailScreenState extends State<InitialDetailScreen2> {
                                 width:width - 64.0,
                                 child: ElevatedButton(
                                   child: Text("Continue", style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 16),),
-                                  onPressed: () => print("it's pressed"),
+                                  onPressed: () {
+                                    Get.toNamed("/");
+                                    //print("Value is ${Get.parameters['val']}");
+                                    //print("channel is ${Get.parameters['channel']} and device is ${Get.parameters['device']}");
+                                  }, // back(result: "Its going back"),
                                   style: ElevatedButton.styleFrom(
                                     primary: HexColor("003087"),
                                     onPrimary: Colors.white,

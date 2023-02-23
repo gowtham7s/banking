@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'getXexamples.dart';
 import 'initialDetailScreen.dart';
 import 'initialDetailsScreen2.dart';
+import 'internalionalization.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Internationalization());
 }
 
 class MyApp extends StatelessWidget {
